@@ -1,0 +1,72 @@
+{
+    "kind": "collectionType",
+    "collectionName": "articles",
+    "info": {
+        "singularName": "article",
+        "pluralName": "articles",
+        "displayName": "Article",
+        "description": "Blog articles"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+        },
+        "content": {
+            "type": "blocks"
+        },
+        "excerpt": {
+            "type": "text",
+            "required": true
+        },
+        "pillar": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::pillar.pillar"
+        },
+        "tags": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::tag.tag"
+        },
+        "author": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::author.author"
+        },
+        "featuredImage": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "publishDate": {
+            "type": "date",
+            "required": true
+        },
+        "readTime": {
+            "type": "integer",
+            "required": true,
+            "default": 5,
+            "min": 1
+        },
+        "isFeatured": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}
