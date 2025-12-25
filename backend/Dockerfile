@@ -43,10 +43,10 @@ RUN mkdir -p .tmp
 # Set production environment
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
-ENV PORT=4002
+ENV PORT=5603
 
 # Expose port
-EXPOSE 4002
+EXPOSE 5603
 
 # Start Strapi
 CMD ["npm", "run", "start"]

@@ -18,12 +18,12 @@ COPY package*.json ./
 RUN npm install
 
 # Expose Strapi port
-EXPOSE 4002
+EXPOSE 5603
 
 # Set environment variables for development
 ENV NODE_ENV=development
 ENV HOST=0.0.0.0
-ENV PORT=4002
+ENV PORT=5603
 
 # Development command - uses volume mount for hot reload
 CMD ["npm", "run", "develop"]
