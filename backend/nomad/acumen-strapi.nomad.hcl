@@ -41,8 +41,14 @@ job "Acumen-Strapi" {
       driver = "docker"
 
       config {
-        image = "friendy21/acumen-strapi:latest"
+        image = "ghcr.io/friendy21/acumen-blogs/strapi:latest"
         ports = ["http"]
+        
+        # Authentication for GitHub Container Registry
+        auth {
+          username = "friendy21"
+          password = "GITHUB_PAT_TOKEN"  # Replace with actual token from Nomad variable
+        }
       }
 
       env {
